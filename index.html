@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Predictor App</title>
+</head>
+
+<body>
+    <div>
+        <center>
+            <form method="post" action="{{ url_for('predict')}}" style="width:40%">
+                <div class="col-auto">
+                    <label for="precipitation">Precipitation</label>
+                    <input class="form-control" type="decimal" placeholder="precipitation" id="precipitation"
+                        name="precipitation">
+
+                </div>
+                <br>
+                <div class="col-auto">
+                    <label for="temp_max">temp_max</label>
+                    <input class="form-control" type="text" placeholder="temp_max" id="temp_max" name="temp_max">
+                </div>
+                <br>
+
+                <div class="col-auto">
+                    <label for="temp_min">temp_min</label>
+                    <input class="form-control" type="text" placeholder="temp_min" id="temp_min" name="temp_min">
+                </div>
+                <br>
+
+                <div class="col-auto">
+                    <label for="wind">wind</label>
+                    <input class="form-control" type="text" placeholder="wind" id="wind" name="wind">
+                </div>
+                <br>
+
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3">submit</button>
+                </div>
+            </form>
+        </center>
+    </div>
+    <center>
+        <div>
+            {% if result %}
+            <h1>The Weather will be like</h1>
+            <h1>{{ result }}</h1>
+            {% endif %}
+        </div>
+    </center>
+</body>
+
+
+
+</html>
